@@ -115,7 +115,7 @@
     background-size: cover;
     background-position: center;
     color: white;
-    margin: -2rem -1rem 2rem;
+    margin: -2rem 0 2rem;
     min-height: 80vh;
     display: flex;
     align-items: center;

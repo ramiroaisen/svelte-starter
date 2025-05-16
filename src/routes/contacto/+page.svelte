@@ -108,23 +108,27 @@
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 4rem 1rem;
-    text-align: center;
-    margin: -2rem -1rem 2rem;
+    margin: -2rem 0 2rem;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1rem;
   }
 
   .hero p {
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     opacity: 0.9;
   }
 
@@ -208,12 +212,8 @@
   }
 
   @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
+    .hero-content {
+      padding: 4rem 1rem;
     }
 
     .zones {
