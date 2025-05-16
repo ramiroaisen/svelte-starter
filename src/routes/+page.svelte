@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { mdiLightningBolt, mdiShieldCheck, mdiClockFast, mdiCashMultiple, mdiAccountHardHat, mdiHandshake } from '@mdi/js';
+  import { mdiLightningBolt, mdiShieldCheck, mdiClockFast, mdiCashMultiple, mdiAccountHardHat, mdiHandshake, mdiStar } from '@mdi/js';
   import Button from '$lib/components/Button.svelte';
   import ServiceCard from '$lib/components/ServiceCard.svelte';
   import TestimonialCard from '$lib/components/TestimonialCard.svelte';
@@ -40,19 +40,22 @@
 
   const testimonials = [
     {
-      name: 'Pedro Lorente',
+      name: 'Pedro',
       service: 'Mantenimiento de Tableros Eléctricos',
-      content: 'Excelente servicio de mantenimiento de tableros. Fueron muy minuciosos y detectaron problemas que ni siquiera sabía que tenía. Ahora me siento mucho más seguro.'
+      content: 'Excelente servicio de mantenimiento de tableros. Fueron muy minuciosos y detectaron problemas que ni siquiera sabía que tenía. Ahora me siento mucho más seguro.',
+      stars: Array(5).fill(mdiStar)
     },
     {
-      name: 'Estefania Giselda',
+      name: 'Estefania',
       service: 'Instalación de Iluminación LED',
-      content: 'Los chicos llegaron puntualmente y se ocuparon de todo. Noté un ahorro de energía significativo desde que hicimos el cambio.'
+      content: 'Los chicos llegaron puntualmente y se ocuparon de todo. Noté un ahorro de energía significativo desde que hicimos el cambio.',
+      stars: Array(5).fill(mdiStar)
     },
     {
-      name: 'Susana Bochelli',
+      name: 'Susana',
       service: 'Reparación de Cortocircuitos',
-      content: 'No puedo agradecer suficiente por la rápida y buena reparación. En menos de una hora, solucionaron el problema y me dieron consejos útiles.'
+      content: 'No puedo agradecer suficiente por la rápida y buena reparación. En menos de una hora, solucionaron el problema y me dieron consejos útiles.',
+      stars: Array(5).fill(mdiStar)
     }
   ];
 </script>
@@ -86,7 +89,14 @@
   <h2>Lo que dicen nuestros clientes</h2>
   <div class="testimonials-grid">
     {#each testimonials as testimonial}
-      <TestimonialCard {...testimonial} />
+      <div class="testimonial-wrapper">
+        <div class="stars">
+          {#each testimonial.stars as star}
+            <Icon path={star} size="24px" />
+          {/each}
+        </div>
+        <TestimonialCard {...testimonial} />
+      </div>
     {/each}
   </div>
 </section>
@@ -152,6 +162,19 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+  }
+
+  .testimonial-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stars {
+    display: flex;
+    gap: 0.25rem;
+    justify-content: center;
+    color: var(--primary-color);
   }
 
   .cta {
