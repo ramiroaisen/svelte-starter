@@ -115,25 +115,33 @@
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 4rem 1rem;
-    text-align: center;
     margin: -2rem -1rem 2rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
   }
 
   .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
 
   .hero p {
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     margin-bottom: 2rem;
     opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-buttons {
@@ -200,12 +208,8 @@
   }
 
   @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
+    .hero-content {
+      padding: 4rem 1rem;
     }
 
     .hero-buttons {
