@@ -46,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1rem;
   }
 
   .logo {
@@ -77,7 +78,6 @@
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 2rem 1rem;
   }
 
   footer {

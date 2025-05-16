@@ -76,30 +76,32 @@
   </div>
 </section>
 
-<section class="features">
-  <h2>¿Por qué elegirnos?</h2>
-  <div class="features-grid">
-    {#each features as feature}
-      <ServiceCard {...feature} />
-    {/each}
-  </div>
-</section>
+<div class="content">
+  <section class="features">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="features-grid">
+      {#each features as feature}
+        <ServiceCard {...feature} />
+      {/each}
+    </div>
+  </section>
 
-<section class="testimonials">
-  <h2>Lo que dicen nuestros clientes</h2>
-  <div class="testimonials-grid">
-    {#each testimonials as testimonial}
-      <div class="testimonial-wrapper">
-        <div class="stars">
-          {#each testimonial.stars as star}
-            <Icon path={star} size="24px" />
-          {/each}
+  <section class="testimonials">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonials-grid">
+      {#each testimonials as testimonial}
+        <div class="testimonial-wrapper">
+          <div class="stars">
+            {#each testimonial.stars as star}
+              <Icon path={star} size="24px" />
+            {/each}
+          </div>
+          <TestimonialCard {...testimonial} />
         </div>
-        <TestimonialCard {...testimonial} />
-      </div>
-    {/each}
-  </div>
-</section>
+      {/each}
+    </div>
+  </section>
+</div>
 
 <section class="cta">
   <div class="cta-content">
@@ -148,6 +150,10 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
+  }
+
+  .content {
+    padding: 0 1rem;
   }
 
   section {
@@ -214,11 +220,6 @@
 
     .hero-buttons {
       flex-direction: column;
-    }
-
-    .features-grid,
-    .testimonials-grid {
-      grid-template-columns: 1fr;
     }
   }
 </style>
